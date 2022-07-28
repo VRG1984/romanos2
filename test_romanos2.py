@@ -16,8 +16,10 @@ def test_romano_a_entero_ordenados():
     assert romano_a_entero("MDCCXIII") == 1713
 
 def test_romano_a_entero_mas_de_tres():
-    
     with pytest.raises(RomanNumberError) as exceptionInfo:
         romano_a_entero('LIIII')
     assert str(exceptionInfo.value) == "No se pueden dar más de tres repeticiones"
+
+def test_romano_a_entero_resta_si_soy_mayor_que_anterior():
+    assert romano_a_entero("IV") == 4
 

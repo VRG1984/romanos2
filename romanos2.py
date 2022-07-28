@@ -60,6 +60,10 @@ def romano_a_entero(romano):
         if repeticiones > 3:
             raise RomanNumberError("No se pueden dar más de tres repeticiones")
         
+
+        if simbolos_romanos[caracter] > simbolos_romanos[caracter_anterior]:
+            numero_romano -= simbolos_romanos[caracter_anterior] * 2
+            
         numero_romano += simbolos_romanos[caracter]
         caracter_anterior = caracter
     
